@@ -1,0 +1,20 @@
+name: React CI with Docker
+
+on: [ push, pull_request ]
+
+jobs:
+  docker-build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: ES Lint
+        run: npm run lint
+
+      - name: Build Frontend
+        run: npm run build
