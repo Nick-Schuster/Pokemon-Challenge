@@ -22,6 +22,10 @@ jobs:
         run: |
           docker compose up --build -d
 
+      - name: Run Tests
+        run: |
+          docker compose run --rm test
+
       - name: Check running containers
         run: docker ps
 

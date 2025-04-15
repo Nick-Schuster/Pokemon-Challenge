@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   web:
     build: .
@@ -9,3 +7,10 @@ services:
       - .:/app
     working_dir: /app
     command: npm start
+
+  test:
+    build: .
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: npm test
